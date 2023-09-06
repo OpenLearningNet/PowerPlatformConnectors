@@ -1,0 +1,314 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "OpenLearning",
+    "description": "Subscribe Course events",
+    "version": "1.0"
+  },
+  "host": "api.openlearning.com",
+  "basePath": "/v2.1",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [],
+  "produces": [],
+  "paths": {
+    "/institutions/{institution_id}/connector/{connector_id}/subscribe": {
+      "x-ms-notification-content": {
+        "schema": {
+          "type": "object",
+          "properties": {
+            "action": {
+              "type": "string",
+              "description": "action"
+            },
+            "actor": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "title": "actor name",
+                  "description": "actor name"
+                },
+                "id": {
+                  "type": "string",
+                  "title": "actor id",
+                  "description": "actor id"
+                },
+                "externalId": {
+                  "type": "string",
+                  "title": "actor external id",
+                  "description": "actr external id"
+                },
+                "institutionEmail": {
+                  "type": "string",
+                  "title": "actor institution email",
+                  "description": "actor institution email"
+                },
+                "userEmail": {
+                  "type": "string",
+                  "title": "actor user email",
+                  "description": "actor user email"
+                }
+              },
+              "description": "actor"
+            },
+            "page": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string",
+                  "title": "page title",
+                  "description": "page title"
+                },
+                "id": {
+                  "type": "string",
+                  "title": "page id",
+                  "description": "page id"
+                },
+                "url": {
+                  "type": "string",
+                  "title": "page url",
+                  "description": "page url"
+                }
+              },
+              "description": "page"
+            },
+            "activity": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "title": "activity id",
+                  "description": "activity id"
+                }
+              }
+            },
+            "comment": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "title": "comment id",
+                  "description": "comment id"
+                },
+                "content": {
+                  "type": "string",
+                  "title": "comment content",
+                  "description": "comment content"
+                }
+              },
+              "description": "comment"
+            },
+            "course": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "title": "course id",
+                  "description": "course id"
+                },
+                "title": {
+                  "type": "string",
+                  "title": "course title",
+                  "description": "course title"
+                }
+              },
+              "description": "course"
+            },
+            "class": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "title": "class id",
+                  "description": "class id"
+                },
+                "title": {
+                  "type": "string",
+                  "title": "class title",
+                  "description": "class title"
+                },
+                "courseTitle": {
+                  "type": "string",
+                  "title": "course title",
+                  "description": "course title"
+                }
+              },
+              "description": "class"
+            },
+            "certificate": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "title": "certificate id",
+                  "description": "certificate id"
+                },
+                "url": {
+                  "type": "string",
+                  "title": "certificate url",
+                  "description": "certificate url"
+                }
+              },
+              "description": "certificate"
+            },
+            "submission": {
+              "type": "object",
+              "additionalProperties": true,
+              "title": "submission",
+              "description": "submission"
+            },
+            "post": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "title": "post id",
+                  "description": "post id"
+                },
+                "text": {
+                  "type": "string",
+                  "title": "post text",
+                  "description": "post text"
+                },
+                "data": {
+                  "type": "object",
+                  "additionalProperties": true,
+                  "title": "post data",
+                  "description": "post data"
+                }
+              },
+              "description": "post"
+            },
+            "context": {
+              "type": "object",
+              "properties": {
+                "courseId": {
+                  "type": "string",
+                  "title": "course id",
+                  "description": "course id in context"
+                },
+                "classId": {
+                  "type": "string",
+                  "title": "class id",
+                  "description": "class id in context"
+                },
+                "ipAddress": {
+                  "type": "string",
+                  "description": "ipAddress"
+                }
+              },
+              "description": "context"
+            },
+            "timestamp": {
+              "type": "string",
+              "description": "timestamp"
+            }
+          }
+        },
+        "description": "Course event"
+      },
+      "post": {
+        "responses": {
+          "200": {
+            "description": "This is the Successmessage."
+          }
+        },
+        "summary": "SubscribeUserEvent",
+        "description": "Subscribe to a User-Triggered Event",
+        "operationId": "subscribe_power_automate_connector",
+        "consumes": [
+          "application/json"
+        ],
+        "x-ms-visibility": "important",
+        "x-ms-trigger": "single",
+        "parameters": [
+          {
+            "name": "institution_id",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "connector_id",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "description": "label"
+                },
+                "action": {
+                  "type": "string",
+                  "description": "action",
+                  "x-ms-visibility": "important",
+                  "title": "",
+                  "enum": [
+                    "pageViewed",
+                    "pageCompleted",
+                    "pageCommented",
+                    "activityCompleted",
+                    "activitySubmitted",
+                    "courseCompleted",
+                    "postPublished",
+                    "postCommented",
+                    "classProgressed",
+                    "classJoined",
+                    "certificateIssued"
+                  ]
+                },
+                "courseId": {
+                  "type": "string",
+                  "description": "courseId",
+                  "title": "",
+                  "x-ms-visibility": "important"
+                },
+                "classId": {
+                  "type": "string",
+                  "description": "classId",
+                  "title": "",
+                  "x-ms-visibility": "important"
+                },
+                "url": {
+                  "type": "string",
+                  "description": "url",
+                  "x-ms-notification-url": true,
+                  "x-ms-visibility": "internal",
+                  "title": ""
+                }
+              },
+              "required": [
+                "url"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {},
+  "parameters": {},
+  "responses": {},
+  "securityDefinitions": {
+    "API Key": {
+      "type": "apiKey",
+      "in": "header",
+      "name": "X-API-Key"
+    }
+  },
+  "security": [
+    {
+      "API Key": []
+    }
+  ],
+  "tags": []
+}
