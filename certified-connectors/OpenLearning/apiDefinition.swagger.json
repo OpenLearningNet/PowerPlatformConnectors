@@ -159,7 +159,8 @@
                 },
                 "ipAddress": {
                   "type": "string",
-                  "description": "ipAddress"
+                  "title": "ip address",
+                  "description": "user ip address in context"
                 },
                 "courseTitle": {
                   "type": "string",
