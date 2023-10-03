@@ -100,43 +100,6 @@
               },
               "description": "comment"
             },
-            "course": {
-              "type": "object",
-              "properties": {
-                "id": {
-                  "type": "string",
-                  "title": "course id",
-                  "description": "course id"
-                },
-                "title": {
-                  "type": "string",
-                  "title": "course title",
-                  "description": "course title"
-                }
-              },
-              "description": "course"
-            },
-            "class": {
-              "type": "object",
-              "properties": {
-                "id": {
-                  "type": "string",
-                  "title": "class id",
-                  "description": "class id"
-                },
-                "title": {
-                  "type": "string",
-                  "title": "class title",
-                  "description": "class title"
-                },
-                "courseTitle": {
-                  "type": "string",
-                  "title": "course title",
-                  "description": "course title"
-                }
-              },
-              "description": "class"
-            },
             "certificate": {
               "type": "object",
               "properties": {
@@ -197,6 +160,21 @@
                 "ipAddress": {
                   "type": "string",
                   "description": "ipAddress"
+                },
+                "courseTitle": {
+                  "type": "string",
+                  "title": "course title",
+                  "description": "course title in context"
+                },
+                "classTitle": {
+                  "type": "string",
+                  "title": "class title",
+                  "description": "class title in context"
+                },
+                "enrolDate": {
+                  "type": "string",
+                  "title": "Enrol date",
+                  "description": "Enrol date in context"
                 }
               },
               "description": "context"
